@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/side.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/side.css}">
 </head>
 <body>
-<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
-
-
-
+<div th:replace="~{side::topbar}"></div>
+<div th:replace="~{side::sidebar}"></div>
+<div class="main">
+    <p>欢迎，<p  th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p></p>
+</div>
 </body>
 </html>

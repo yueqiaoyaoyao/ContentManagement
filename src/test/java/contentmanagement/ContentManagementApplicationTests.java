@@ -1,9 +1,12 @@
 package contentmanagement;
 
+import contentmanagement.pojo.News;
 import contentmanagement.service.UserServiceImpl;
+import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import javax.sql.DataSource;
@@ -21,6 +24,9 @@ class ContentManagementApplicationTests {
 
     @Autowired
     UserServiceImpl userService;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
     @Test
     void contextLoads() {
@@ -42,6 +48,13 @@ class ContentManagementApplicationTests {
     @Test
     void testMybatis(){
         System.out.println(userService.addUser("test0","123456"));
+    }
+
+    @Test
+    void testMongoDB(){
+        News news = new News();
+        news.setContent("w");
+        mongoTemplate.insert(news);
     }
 
 }

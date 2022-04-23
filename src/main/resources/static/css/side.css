@@ -1,0 +1,10 @@
+.main{
+    position: absolute;
+    top: 63px;
+    left: 220px;
+    width:1000px;
+}
+
+p{
+    color: blue;
+}
