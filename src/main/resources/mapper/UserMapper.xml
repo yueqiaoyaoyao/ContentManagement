@@ -9,4 +9,8 @@
         values (#{param1},#{param2})
     </insert>
 
+    <select id="queryUserByName" parameterType="String" resultType="User">
+        select * from `cms`.`cms_user` where name = #{param1}
+    </select>
+
 </mapper>

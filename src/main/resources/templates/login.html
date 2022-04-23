@@ -6,23 +6,23 @@
 </head>
 <body>
 
-<!--<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>-->
+<p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
 
 <div>
-    <form>
+    <form th:action="@{/login/check}">
         <h2>登录</h2>
-        <input name="UserName" type="text" placeholder="用户名"/>
-        <input name="Password" type="password" placeholder="密码"/>
+        <input name="name" type="text" placeholder="用户名"/>
+        <input name="password" type="password" placeholder="密码"/>
         <input type="submit" value="登录"/>
     </form>
 </div>
 
 <div>
-    <form>
+    <form th:action="@{/register/check}">
         <h2>注册</h2>
-        <input name="UserName" type="text" placeholder="用户名"/>
-        <input name="Password" type="password" placeholder="密码"/>
-        <input type="submit" class="btn" value="注册"/>
+        <input name="name" type="text" placeholder="用户名"/>
+        <input name="password" type="password" placeholder="密码"/>
+        <input type="submit" value="注册"/>
     </form>
 </div>
 </body>

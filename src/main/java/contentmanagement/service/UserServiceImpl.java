@@ -1,6 +1,7 @@
 package contentmanagement.service;
 
 import contentmanagement.mapper.UserMapper;
+import contentmanagement.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,10 @@ public class UserServiceImpl implements UserService{
         return 1;
     }
 
-
-
+    @Override
+    public User queryUserByName(String name) {
+        return userMapper.queryUserByName(name);
+    }
 
 
 }

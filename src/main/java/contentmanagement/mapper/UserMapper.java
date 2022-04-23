@@ -1,5 +1,6 @@
 package contentmanagement.mapper;
 
+import contentmanagement.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -7,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface UserMapper {
     int addUser(String name,String password);
+    User queryUserByName(String name);
 }

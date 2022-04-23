@@ -1,7 +1,8 @@
 package contentmanagement.service;
 
-import org.apache.ibatis.annotations.Param;
+import contentmanagement.pojo.User;
 
 public interface UserService {
     int addUser(String name,String password);
+    User queryUserByName(String name);
 }
