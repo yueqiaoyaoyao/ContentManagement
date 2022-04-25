@@ -1,10 +1,12 @@
 package contentmanagement.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
+import contentmanagement.pojo.News;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-@Repository
-@Mapper
-public interface NewsMapper{
-    int addNews(String content);
+import java.util.List;
+
+
+public interface NewsMapper extends MongoRepository<News,Integer> {
+    List<News> findByTitle(String title);
+    int deleteNewsByTitle(String title);
 }

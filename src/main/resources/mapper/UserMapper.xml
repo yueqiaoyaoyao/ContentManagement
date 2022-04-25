@@ -13,4 +13,19 @@
         select * from `cms`.`cms_user` where name = #{param1}
     </select>
 
+    <select id="findAll" parameterType="String" resultType="User">
+        select * from `cms`.`cms_user`
+    </select>
+
+    <update id="modifyUser" parameterType="String" >
+        UPDATE `cms`.`cms_user`
+        SET `password` =  #{param2}
+        WHERE (`name`=#{param1});
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+        DELETE FROM `cms`.`cms_user`
+        WHERE `name` = #{param1}
+    </delete>
+
 </mapper>

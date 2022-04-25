@@ -5,6 +5,8 @@ import contentmanagement.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("UserService")
 public class UserServiceImpl implements UserService{
 
@@ -24,6 +26,21 @@ public class UserServiceImpl implements UserService{
     @Override
     public User queryUserByName(String name) {
         return userMapper.queryUserByName(name);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userMapper.findAll();
+    }
+
+    @Override
+    public int modifyUser(String name,String password) {
+        return userMapper.modifyUser(name, password);
+    }
+
+    @Override
+    public int deleteUser(String name) {
+        return userMapper.deleteUser(name);
     }
 
 

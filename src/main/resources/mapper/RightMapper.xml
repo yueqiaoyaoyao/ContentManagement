@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="contentmanagement.mapper.RightMapper">
+
+    <insert id="addRight"  parameterType="String">
+        insert into `cms_right` (userName, roleName)
+        values (#{param1},#{param2})
+    </insert>
+
+    <select id="queryRight" resultType="Right">
+        select * from `cms_right` where userName = #{param1}
+    </select>
+
+    <select id="getAllRight" resultType="Right">
+        select * from `cms_right`
+    </select>
+
+    <update id="updateRight">
+        update `cms_right`
+        set roleName = #{param2}
+        where userName = #{param1}
+    </update>
+
+    <delete id="deleteRight">
+        delete from `cms_right` where userName = #{param1}
+    </delete>
+
+</mapper>
