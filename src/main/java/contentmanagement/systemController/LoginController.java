@@ -15,6 +15,7 @@ public class LoginController {
     @Autowired
     UserServiceImpl userService;
 
+
     @RequestMapping("/login/check")
     public String login(@RequestParam("name") String name,
                         @RequestParam("password") String password,

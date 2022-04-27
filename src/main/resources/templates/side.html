@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="top" th:fragment="topbar">
-    <h1 align="center">Content Manager Service</h1>
+    <h1 align="center">内容管理系统</h1>
 </div>
 
 <div id="sidebar" class="container-fluid" th:fragment="sidebar">
@@ -20,14 +20,9 @@
             <ul id="main-nav" class="nav nav-tabs nav-stacked">
                 <li><a th:href="@{/main}">返回首页</a></li>
                 <li><a th:href="@{/}">返回登录</a></li>
-                <li><a href="#">系统管理</a></li>
-                <li><a href="#">---创建角色</a></li>
-                <li><a href="#">---用户授权</a></li>
-                <li><a href="#">用户管理</a></li>
-                <li><a href="#">---创建用户</a></li>
+                <li><a th:href="@{/role/list}">角色管理</a></li>
+                <li><a th:href="@{/user/list}">用户管理</a></li>
                 <li><a href="#">内容管理</a></li>
-                <li><a href="#">---创建</a></li>
-                <li><a href="#">---查询</a></li>
                 <li><a href="#">日志管理</a></li>
             </ul>
         </div>

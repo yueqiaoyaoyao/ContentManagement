@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/side.js}"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/side.css}">
+</head>
+<body>
+<div th:replace="~{side::topbar}"></div>
+<div th:replace="~{side::sidebar}"></div>
+<div class="main">
+  <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+  <form th:action="@{/user/add}">
+    <input name="name" type="text" placeholder="姓名"/>
+    <input name="password" type="password" placeholder="密码"/>
+    <input type="submit" value="创建"/>
+  </form>
+</div>
+
+</body>
+</html>
