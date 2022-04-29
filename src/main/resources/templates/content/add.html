@@ -14,27 +14,13 @@
 <div th:replace="~{side::topbar}"></div>
 <div th:replace="~{side::sidebar}"></div>
 <div class="main">
-  <a class="btn btn-sm btn-success" th:href="@{/content/addNews}">新增</a>
-  <table class="table table-striped table-sm">
-    <thead>
-    <tr>
-      <th>标题</th>
-      <th>作者</th>
-      <th>操作</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="news:${newsList}">
-      <td th:text="${news.getTitle()}"></td>
-      <td th:text="${news.getWriter()}"></td>
-      <td>
-        <a class="btn btn-sm btn-primary" th:href="@{/content/modify/}+${news.getTitle()}" >编辑</a>
-        <a class="btn btn-sm btn-danger" th:href="@{/content/delete/}+${news.getTitle()}">删除</a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+  <form th:action="@{/content/add}">
+    <input name="title" type="text" placeholder="标题"/>
+    <input name="writer" type="text" placeholder="作者"/>
+    <input name="content" type="text" placeholder="内容"/>
+    <input type="submit" value="创建"/>
+  </form>
 </div>
-
 </body>
 </html>

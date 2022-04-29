@@ -2,7 +2,6 @@ package contentmanagement;
 
 import contentmanagement.pojo.News;
 import contentmanagement.service.*;
-import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +10,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-import java.util.Date;
 
 @SpringBootTest
 class ContentManagementApplicationTests {
@@ -61,7 +59,6 @@ class ContentManagementApplicationTests {
 //        System.out.println(roleService.addRole("12","2,3"));
         System.out.println(rightService.addRight("test1","3"));
     }
-
 
     @Test
     void testMongoDB(){
@@ -123,10 +120,9 @@ class ContentManagementApplicationTests {
         //delete
 //        System.out.println(newsService.deleteNews("标题1"));
         //modify
-        News news = newsService.findByTitle("标题1").get(0);
-        news.setContent("内容2");
+        News news = newsService.findByTitle("标题1");
+        news.setContent("内容3");
         System.out.println(newsService.updateNews(news));
 
     }
-
 }

@@ -7,6 +7,6 @@ import java.util.List;
 
 
 public interface NewsMapper extends MongoRepository<News,Integer> {
-    List<News> findByTitle(String title);
+    News findByTitle(String title);
     int deleteNewsByTitle(String title);
 }

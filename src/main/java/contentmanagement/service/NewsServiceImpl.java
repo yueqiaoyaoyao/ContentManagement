@@ -35,8 +35,9 @@ public class NewsServiceImpl implements NewsService{
         try{
             Query query = new Query(new Criteria("id").is(news.getId()));
             Update update = new Update()
+                    .set("writer",news.getWriter())
                     .set("content",news.getContent())
-                    .set("createTime",new Date());
+                    .set("updateTime",new Date());
             mongoTemplate.updateMulti(query,update,news.getClass());
         } catch (Exception e) {
             return 0;
@@ -46,7 +47,7 @@ public class NewsServiceImpl implements NewsService{
 
 
     @Override
-    public List<News> findByTitle(String title) {
+    public News findByTitle(String title) {
         return newsMapper.findByTitle(title);
     }
 

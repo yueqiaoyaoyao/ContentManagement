@@ -27,6 +27,8 @@ public class ShiroConfig {
         filterMap.put("/user/*","perms[role2]");
         filterMap.put("/content/*","authc");
         filterMap.put("/content/*","perms[role3]");
+        filterMap.put("/log/*","authc");
+        filterMap.put("/log/*","perms[role4]");
         filterMap.put("/logout","logout");
         filterMap.put("/main", "authc");
         filterMap.put("/main", "user");
