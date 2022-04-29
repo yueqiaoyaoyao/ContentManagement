@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,6 +13,8 @@
 <body>
 <div th:replace="~{side::topbar}"></div>
 <div th:replace="~{side::sidebar}"></div>
-
+<div class="main">
+    <span shiro:guest>请登录</span>
+</div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -19,11 +20,12 @@
         <div class="col-md-2" style="background: #ddd">
             <ul id="main-nav" class="nav nav-tabs nav-stacked">
                 <li><a th:href="@{/main}">返回首页</a></li>
-                <li><a th:href="@{/}">返回登录</a></li>
-                <li><a th:href="@{/role/list}">角色管理</a></li>
-                <li><a th:href="@{/user/list}">用户管理</a></li>
-                <li><a href="#">内容管理</a></li>
-                <li><a href="#">日志管理</a></li>
+                <li shiro:user=""><a th:href="@{/logout}">注销</a></li>
+                <li shiro:guest><a th:href="@{/login}">登录</a></li>
+                <li shiro:hasPermission="role1"><a th:href="@{/role/list}">角色管理</a></li>
+                <li shiro:hasPermission="role2"><a th:href="@{/user/list}">用户管理</a></li>
+                <li shiro:hasPermission="role3"><a href="#">内容管理</a></li>
+                <li shiro:hasPermission="role4"><a href="#">日志管理</a></li>
             </ul>
         </div>
     </div>
